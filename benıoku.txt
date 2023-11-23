@@ -1,0 +1,1 @@
+Yuklenen nedmın sayfası ıcerısınde js kodları oldugu ıcın buyuk dosya boyutu hatası verdı bende sadece o bolumu zıpleyıp dıger bolumlerı normal şekilde yukledım nedmın içerisindeki vendors kısmı js kodlarının barındıgı bölümdür
