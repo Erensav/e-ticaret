@@ -22,6 +22,7 @@ $ayarcek=$ayarsor->fetch(PDO::FETCH_ASSOC);
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="../../ODEV2/img/logo.png">
 
     <title>EREN|WEB SITE</title>
 
@@ -50,7 +51,7 @@ $ayarcek=$ayarsor->fetch(PDO::FETCH_ASSOC);
         <div class="col-md-3 left_col">
           <div class="left_col scroll-view">
             <div class="navbar nav_title" style="border: 0;">
-              <a href="index.html" class="site_title"><i class="fa fa-paw"></i> <span>Gentelella Alela!</span></a>
+              <a href="index.html" class="site_title"><i class="fa fa-paw"></i> <span><?php echo $ayarcek["web_title"] ?> Admin Sayfası</span></a>
             </div>
 
             <div class="clearfix"></div>
@@ -58,11 +59,11 @@ $ayarcek=$ayarsor->fetch(PDO::FETCH_ASSOC);
             <!-- menu profile quick info -->
             <div class="profile clearfix">
               <div class="profile_pic">
-                <img src="images/img.jpg" alt="..." class="img-circle profile_img">
+                <img src="../../ODEV2/img/logo.png" alt="..." class="img-circle profile_img">
               </div>
-              <div class="profile_info">
-                <span>Welcome,</span>
-                <h2>John Doe</h2>
+              <div class="profile_home">
+                <span>Hosgeldınız </span>
+                <h2><?php echo $ayarcek["web_smtpuser"] ?></h2>
               </div>
             </div>
             <!-- /menu profile quick info -->
@@ -131,7 +132,7 @@ $ayarcek=$ayarsor->fetch(PDO::FETCH_ASSOC);
               <ul class="nav navbar-nav navbar-right">
                 <li class="">
                   <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                    <img src="images/img.jpg" alt="">John Doe
+                    <img src="../../ODEV2/img/logo.png" alt=""><?php echo $ayarcek["web_smtpuser"] ?>
                     <span class=" fa fa-angle-down"></span>
                   </a>
                   <ul class="dropdown-menu dropdown-usermenu pull-right">

@@ -73,7 +73,7 @@
                 </div>
               </div>
               <div class="ln_solid"></div>
-              <div class="form-group" align="right">
+              <div class="form-group" text-align="right">
                 <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
                   <button type="submit" name="ayarguncelle" class="btn btn-primary">Guncelle</button>
                 </div>

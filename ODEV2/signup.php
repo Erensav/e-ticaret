@@ -27,10 +27,13 @@
             <div class="col">
                 <form class="form-signin" action="" method="POST">
                     <img class="mb-2" src="img/logo.png" alt="" width="72" height="72">
-                    <h1 class="h3 mb-4 font-weight-normal">Kayıt Olunuz!</h1>
-                    <input type="email" id="inputEmail" class="form-control mb-1" placeholder="Email" name="user_mail" required autofocus>
-                    <input type="text" id="inputUsername" class="form-control" placeholder="Kullanıcı Adı" name="username" required>
-                    <input type="password" id="inputPassword" class="form-control" placeholder="Şifre" name="user_password" required>
+                    <h1 class="h3 mb-4 font-weight-normal">Kayıt Sayfasına Hosgeldiniz</h1>
+                    <input type="email" id="inputEmail" class="form-control mb-3" placeholder="Email" name="user_mail" required autofocus>
+                    <input type="text" id="inputUsername" class="form-control mb-3" placeholder="Kullanıcı Adı" name="username" required>
+                    <input type="text" id="inputUsersurname" class="form-control mb-3" placeholder="Kullanıcı Soyadı" name="user_surname" required>
+                    <input type="text" id="inputUserage" class="form-control mb-3" placeholder="Kullanıcı Yaşı" name="user_age" required>
+                    <input type="password" id="inputPassword" class="form-control mb-3" placeholder="Şifre" name="user_password" required>                    
+
                     <div class="checkbox1 mb-3 ">
                         <label class="toggle" value="remember-me">
                             <span class="onoff">Beni Hatırla</span>
@@ -45,8 +48,13 @@
                     require "connect.php";
                     if (isset($_POST['send'])) {
                         $username = $_POST['username'];
+                        $user_surname = $_POST['user_surname'];
+                        $user_age = $_POST['user_age'];
                         $user_mail = $_POST['user_mail'];
                         $user_password = $_POST['user_password'];
+                        
+
+
 
                         $duplicate1 = mysqli_query($conn, "SELECT * FROM user WHERE username = '$username' ");
                         if (mysqli_num_rows($duplicate1) > 0) {
@@ -57,7 +65,7 @@
                         if (mysqli_num_rows($duplicate) > 0) {
                             echo "Email daha önce kullanılmış!";
                         } else {
-                            $query = "INSERT INTO user VALUES('','$username','$user_password','$user_mail')";
+                            $query = "INSERT INTO user VALUES('','$username','$user_password','$user_mail','$user_surname','$user_age')";
                             mysqli_query($conn, $query);
                             echo "Kayıt işlemi başarılı";
                             header("Refresh:1 index.php ");
@@ -67,7 +75,7 @@
 
                     <br><br><br><br>
 
-                    <p class="mt-5 mb-3 text-muted">&copy; 2023-2024</p>
+                    <p class="mt-5 mb-3 text-muted">&copy; 2023-2024 Eğitim Öğretim Sezonu</p>
                 </form>
             </div>
             <div class="col">
@@ -81,7 +89,7 @@
 
         toggle.addEventListener("click", () => {
             const onoff = toggle.parentNode.querySelector(".onoff")
-            onoff.textContent = toggle.checked ? "Seni Hatırlıyorum:" : "Beni Hatırla:"
+            onoff.textContent = toggle.checked ? "Beni Hatırla:" : "Beni Hatırla:"
         })
     </script>
 
